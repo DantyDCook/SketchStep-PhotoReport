@@ -1,11 +1,12 @@
 {
   "name": "sketchstep-photoreport",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "test": "node --test"
   },
   "dependencies": {
     "vite": "6.4.1",
