@@ -1,0 +1,2 @@
+# PhotoReport exchange v1.0.0
+ZIP contains manifest.json and photos/<UUID>. Manifest type sketchstep-photoreport; schema_version 1.0.0; details object; photos array with stable id, path, name, SHA-256 hash, dimensions, capture timestamp/source, floor and room labels, description, tags and include flag. Original bytes are retained. Restore validates checksums and IDs before replacing the local draft. Do not match projects by numeric index. Cross-app merge and stable project/floor/room UUIDs are not yet implemented.
