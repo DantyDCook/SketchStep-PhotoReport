@@ -1,0 +1,11 @@
+# Acceptance gate
+- Build on Node 22; confirm no console errors.
+- Import ZIP with JPEG/PNG, nested directories and duplicate bytes; confirm counts and skip messages.
+- Add title, room, floor, caption and tags; reload; verify persistence.
+- Export PDF with 1/2/4 photos per page; inspect every image and caption, index and page numbers.
+- Export ZIP; clear draft; restore; verify hashes, ordering, metadata and annotations.
+- Reject invalid archive, invalid schema and altered photo bytes without replacing draft.
+- Test 43 and 100 photos on iPhone Safari and Android Chrome; measure memory and responsiveness.
+- Install PWA and reload offline after successful online load; verify export.
+- Confirm no customer image bytes leave browser using network inspector.
+- Confirm both Cloudflare URLs serve same build. Never use actual customer photos in repository fixtures.
