@@ -13,3 +13,10 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: test -f dist/index.html && test -f dist/sw.js && test -f dist/manifest.webmanifest
+      - run: npm install --no-save @playwright/test@1.51.1
+      - run: npx playwright install --with-deps chromium
+      - name: Browser acceptance
+        run: |
+          npx vite preview --host 127.0.0.1 --port 4173 > /tmp/photoreport-preview.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
+          npx playwright test e2e/field-flow.spec.js --workers=1
